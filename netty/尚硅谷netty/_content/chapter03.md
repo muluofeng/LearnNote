@@ -55,7 +55,7 @@ public class BasicBuffer {
 
 关系图的说明:
 
-<!-- ![](../_media/chapter03/chapter03_01.png)) -->
+![](../_media/chapter03/chapter03_01.png)) 
 
 <img style="height:600px" src="_media/chapter03/chapter03_01.png" />
 
