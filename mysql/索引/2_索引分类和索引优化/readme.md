@@ -1,4 +1,8 @@
-###1. 聚簇索引 和 非 聚簇索引
+
+
+
+
+### 1. 聚簇索引 和 非 聚簇索引
 
 - 聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据
 
@@ -186,6 +190,7 @@ Using index 代表表示相应的 select 操作中使用了覆盖索引(Covering
     ```mysql
     explain SELECT SQL_NO_CACHE * FROM emp WHERE emp.age=30 and deptid=5 AND emp.name = 'abcd';
     explain SELECT SQL_NO_CACHE * FROM emp WHERE emp.age=30 and deptid<=5 AND emp.name = 'abcd'; //deptid 后面的字段都不会使用索引，
+    explain SELECT SQL_NO_CACHE * FROM emp WHERE emp.age=30 and deptid<=5 order by emp.name ; //deptid 后面的字段都不会使用索引，
     ```
 
     建议：将可能做范围查询的字段的索引顺序放在最后
@@ -225,7 +230,16 @@ Using index 代表表示相应的 select 操作中使用了覆盖索引(Covering
     explain  SELECT  * FROM emp WHERE  age   =12 union all SELECT  * FROM emp WHERE  age   =14 //走索引
     ```
 
-    
+
+- 区分度不大的情况下 索引也有可能会失效
+
+  ```mysql
+  explain  SELECT  * FROM emp WHERE  code like  '123456%'  // 表中的code 全是123456开头的 这种情况下 也是不会走索引的，看似可以走索引其实muysql优化器不会走
+  
+  
+  ```
+
+  
 
 ### 7.  多表join索引技巧
 
@@ -249,4 +263,154 @@ EXPLAIN SELECT * FROM class LEFT JOIN book ON class.card = book.card;
 
     ![image-20210727094431363](./images/image-20210727094431363.png)
 
-    
+
+
+
+
+
+
+### 8.  order by groupby 索引技巧
+
+  参考索引分析
+
+ 
+
+
+
+
+
+
+### 9. 索引案例分析
+建索引：
+
+建索引：
+
+create index idx_test03_c1234 on test03(c1,c2,c3,c4);
+show index from test03;
+问题：我们创建了复合索引idx_test03_c1234 ,根据以下SQL分析下索引使用情况？
+
+1 . explain select * from test03 where c1=‘a1’;
+
+![image-20210125114132395](https://i.loli.net/2021/01/25/mBYN8tl12pKzwsr.png)
+
+答：使用了一个c1索引。
+
+
+
+2. explain select * from test03 where c1=‘a1’ and c2=‘a2’;
+
+![image-20210125114147640](https://i.loli.net/2021/01/25/2nCKxB6DleuGi4t.png)
+
+答：使用了二个c1、c2索引。
+
+
+
+3. explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c3=‘a3’;
+
+![image-20210125114212649](https://i.loli.net/2021/01/25/7SbmtRwBKOY8yi3.png)
+
+答：使用了三个c1、c2、c3索引。
+
+
+
+4. explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c3=‘a3’ and c4=‘a4’;
+
+   ![image-20210125114229784](https://i.loli.net/2021/01/25/AINfJdMtE5OWo7u.png)
+
+答：使用了四个c1、c2、c3、c4索引。
+
+
+
+5. explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c4=‘a4’ and c3=‘a3’;
+
+   ![image-20210125114428009](https://i.loli.net/2021/01/25/3EJoYXHiFLNjeDU.png)
+
+答：使用了四个c1、c2、c3、c4索引。(c4和c3顺序颠倒，mysql内部sql优化器会自动识别排序)
+
+
+
+
+
+6.explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c3>‘a3’ and c4=‘a4’;
+
+![image-20210125114717504](https://i.loli.net/2021/01/25/7JSOobGD3Qua5Y8.png)
+
+答：使用了三个c1、c2、c3索引。(c3范围匹配之后中断c4索引的使用)
+
+
+
+
+
+7.explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c4>‘a4’ and c3=‘a3’;
+
+![image-20210125114839378](https://i.loli.net/2021/01/25/ZUcPdEbHlIfAOCQ.png)
+
+答：使用了四个c1、c2、c3、c4索引。(c4和c3顺序颠倒，mysql内部sql优化器会自动识别排序，c4为范围匹配但还是会用到索引)
+
+8 .explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c4=‘a4’ order by c3;
+
+![image-20210125115224690](https://i.loli.net/2021/01/25/DRneK5Wlu9xrmYM.png)
+
+答：使用了二个c1、c2索引。(c3作用在排序而不是查找)
+
+9.explain select * from test03 where c1=‘a1’ and c2=‘a2’ order by c3;
+
+![image-20210125115649159](https://i.loli.net/2021/01/25/UO7aAhgGBpqMKeW.png)
+
+答：使用了二个c1、c2索引。(c3作用在排序而不是查找,也跟c4没啥关系)
+
+10.explain select * from test03 where c1=‘a1’ and c2=‘a2’ order by c4;
+
+![image-20210125115823729](https://i.loli.net/2021/01/25/GoLxzK7hUtBXEwR.png)
+
+答：使用了二个c1、c2索引。(出现了filesort，因为c3断开了)
+
+11.explain select * from test03 where c1=‘a1’ and c5=‘a5’ order by c2,c3;
+
+![image-20210125120127201](https://i.loli.net/2021/01/25/BNAPth3x5Vd7Kz4.png)
+
+答： 只用c1一个字段索引，但是c2、c3用于排序,无filesort
+
+12.explain select * from test03 where c1=‘a1’ and c5=‘a5’ order by c3,c2;
+
+![image-20210125120458721](https://i.loli.net/2021/01/25/VmurL1qhwXa3Ynf.png)
+
+答：出现了filesort，我们建的索引是c1 c2 c3 c4，它没有按照顺序来，c3 c2 颠倒了
+
+13.explain select * from test03 where c1=‘a1’ and c2=‘a2’ order by c2,c3;
+
+![image-20210125120951280](https://i.loli.net/2021/01/25/dkgi9lDGLzHmwbt.png)
+
+答：使用了二个c1、c2索引。(查找和排序都是按索引)
+
+14.explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c5=‘a5’ order by c2,c3;
+
+![image-20210125134430549](https://i.loli.net/2021/01/25/e14LiRz28HUh7bm.png)
+
+答：用c1、c2两个字段索引，但是c2、c3用于排序,无filesort
+
+15.explain select * from test03 where c1=‘a1’ and c2=‘a2’ and c5=‘a5’ order by c3,c2;(与12题对比)
+
+答：使用了二个c1、c2索引。(因为之前c2已经是一个常量，不影响后续排序，所以查找和排序都是按索引)
+
+16.explain select * from test03 where c1=‘a1’ and c4=‘a4’ group by c2,c3;
+
+![image-20210125134847292](https://i.loli.net/2021/01/25/ylet9bcCTD4nm7p.png)
+
+答：只用c1一个索引。
+
+17.explain select * from test03 where c1=‘a1’ and c4=‘a4’ group by c3,c2;
+
+![image-20210125135032511](https://img-blog.csdnimg.cn/img_convert/52bf8453a8a03a6655d55f3e2c52792b.png)
+
+答：只用一个索引，会出现Using temporary; Using filesort 。(因为group by分组之前必排序，与order by排序和索引优化原则基本相同。此题中 group by c3,c2不是索引顺序，group by自己排，会有临时表产生)
+
+
+
+
+
+
+
+
+
+参考文章 ： 	https://www.cxyzjd.com/article/qq_37132495/113133812
