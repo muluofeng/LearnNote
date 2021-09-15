@@ -1,8 +1,8 @@
-![logo](_media/icon.svg)
+![logo](_media/avatar.jpeg)
 
 # muluofeng的个人MD笔记
 
-> 希望自己能够越学越好，哈哈
+> .......
 
 
 
