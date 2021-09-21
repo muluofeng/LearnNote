@@ -1,7 +1,8 @@
 * 导读
-    * [mysql](/md/mysql.md)
-    * [redis](/md/redis.md)
-  
+    * [mysql](/study/mysql/)
+   
+
+
 
 
 * 暂无更多...
