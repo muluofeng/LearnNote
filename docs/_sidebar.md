@@ -7,6 +7,7 @@
             * [4_慢查询日志和show profiles](/study/mysql/索引/4_慢查询日志和showprofiles/readme)
         * [事务隔离级别](/study/mysql/事务隔离级别/readme)
         * [锁](/study/mysql/锁/readme)
+        * [mysql主从复制](/study/mysql/mysql主从复制/readme)
    
 
 
