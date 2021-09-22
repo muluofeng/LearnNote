@@ -1,23 +1,6 @@
-* 导读
-    * [mysql](/study/mysql/README)
-        * [**事务隔离级别**](/study/mysql/事务隔离级别/README)
-        * [**索引**](/study/mysql/索引/README)
-            * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/README)
-            * [2_索引分类和索引优化](/study/mysql/索引/2_索引分类和索引优化/README)
-            * [3_索引的创建时机](/study/mysql/索引/3_索引的创建时机/README)
-            * [4_慢查询日志和show profiles](/study/mysql/索引/4_慢查询日志和showprofiles/README)
-        * [**mysql锁**](/study/mysql/锁/README)
-        * [**mysql主从复制**](/study/mysql/mysql主从复制/README)
-
-     * [redis](/study/redis/README)
-        * [**redis安装和介绍**](/study/redis/redis安装和介绍/README)
-        * [**redis持久化**](/study/redis/redis持久化/README)
-        * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
-        * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
-        * [**redis主从复制**](/study/redis/redis主从复制.md)
-    
-
-    * [JUC](/study/JUC/README)
+* 目录
+    * [根目录(/)](/README)   
+     * [JUC](/study/JUC/README)
         * [**1_谈谈Volatile**](/study/JUC/1_谈谈Volatile/README)
             * [**1_Volatile和JMM内存模型的可见性**](/study/JUC/1_谈谈Volatile/1_Volatile和JMM内存模型的可见性/README)
             * [**2_Volatile不保证原子性**](/study/JUC/1_谈谈Volatile/2_Volatile不保证原子性/README)
@@ -45,4 +28,5 @@
         * [**14_乐观锁和悲观锁**](/study/JUC/14_乐观锁和悲观锁/README)
         * [**15.threadlocal**](/study/JUC/15.threadlocal/README)
         * [**Code**](/study/JUC/15.Code/README)
+    
     
