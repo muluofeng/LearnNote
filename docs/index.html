@@ -7,6 +7,9 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+
 </head>
 <body>
   <div id="app"></div>
@@ -29,6 +32,8 @@
       search: 'auto',/* 全局搜索插件 */
       onlyCover:true,/* 首页只显示封面 */
       relativePath: true,  // 启用相对路径
+      sidebarDisplayLevel: 1 //数字0就代表不展开 只显示最表层的【一级目录】,数字1的话就会展开二级目录
+
     
     }
   </script>
@@ -47,6 +52,9 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
 <!-- 暗黑主题切换插件 -->
 <script src="//unpkg.com/docsify-copy-code"></script>
+<!-- 侧边栏 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
 
 </body>
 </html>
