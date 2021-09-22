@@ -4,30 +4,12 @@
 
 # 学习笔记
 
-#### 已完成
-1. jvm 
-2. juc
 
-#### 待完成
-
-1. java基础
-   1. hashmap 原理
-2. mysql
-3. mq
-4. spring & springboot
-5. mybatis
-6. linux
-7. java日志
-8. redis
-9.  docker 
-10. elasticsearch
-11. 计算机网络
-12. 分布式
-
-
-
-
-
+* 首页
+    * [java基础](/study/java基础/README)
+    * [mysql](/study/mysql/README)
+    * [redis](/study/redis/README)
+    * [JUC](/study/JUC/README)
 
 
 
