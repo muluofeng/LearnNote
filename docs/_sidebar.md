@@ -1,5 +1,5 @@
 * 导读
-    * [mysql](/study/mysql/)
+    * [mysql](/study/mysql/README)
         * [**事务隔离级别**](/study/mysql/事务隔离级别/README)
         * [**索引**](/study/mysql/索引/README)
             * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/readme)
