@@ -1,5 +1,3 @@
-*  目录
-{:toc}
 
 
 # 学习笔记
@@ -10,6 +8,8 @@
     * [mysql](/study/mysql/README)
     * [redis](/study/redis/README)
     * [JUC](/study/JUC/README)
+    * [netty](/study/netty/尚硅谷netty/README)
+    * [jvm](/study/jvm/README)
 
 
 

@@ -13,24 +13,14 @@
         * [8_字符串](/study/java基础/8_字符串/README)
         * [9_java日志](/study/java基础/9_java日志/README)
 
-    * [mysql](/study/mysql/README)
-        * [**事务隔离级别**](/study/mysql/事务隔离级别/README)
-        * [**索引**](/study/mysql/索引/README)
-            * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/README)
-            * [2_索引分类和索引优化](/study/mysql/索引/2_索引分类和索引优化/README)
-            * [3_索引的创建时机](/study/mysql/索引/3_索引的创建时机/README)
-            * [4_慢查询日志和show profiles](/study/mysql/索引/4_慢查询日志和showprofiles/README)
-        * [**mysql锁**](/study/mysql/锁/README)
-        * [**mysql主从复制**](/study/mysql/mysql主从复制/README)
-
-     * [redis](/study/redis/README)
-        * [**redis安装和介绍**](/study/redis/redis安装和介绍/README)
-        * [**redis持久化**](/study/redis/redis持久化/README)
-        * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
-        * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
-        * [**redis主从复制**](/study/redis/redis主从复制.md)
-    
-
+    * [jvm](/study/jvm/README)
+        * [0_JVM体系结构](/study/jvm/0_JVM体系结构/README)
+        * [1_什么是GCRoots能做什么](/study/jvm/1_什么是GCRoots能做什么/README)
+        * [2_JVM参数调优](/study/jvm/2_JVM参数调优/README)
+        * [3_Java中的强引用_软引用_弱引用_虚引用分别是什么](/study/jvm/3_Java中的强引用_软引用_弱引用_虚引用分别是什么/README)
+        * [4_Java内存溢出OOM](/study/jvm/4_Java内存溢出OOM/README)
+        * [5_垃圾回收器](/study/jvm/5_垃圾回收器/README)
+        
     * [JUC](/study/JUC/README)
         * [**1_谈谈Volatile**](/study/JUC/1_谈谈Volatile/README)
             * [**1_Volatile和JMM内存模型的可见性**](/study/JUC/1_谈谈Volatile/1_Volatile和JMM内存模型的可见性/README)
@@ -59,6 +49,26 @@
         * [**14_乐观锁和悲观锁**](/study/JUC/14_乐观锁和悲观锁/README)
         * [**15.threadlocal**](/study/JUC/15.threadlocal/README)
         * [**Code**](/study/JUC/15.Code/README)
+
+    * [mysql](/study/mysql/README)
+        * [**事务隔离级别**](/study/mysql/事务隔离级别/README)
+        * [**索引**](/study/mysql/索引/README)
+            * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/README)
+            * [2_索引分类和索引优化](/study/mysql/索引/2_索引分类和索引优化/README)
+            * [3_索引的创建时机](/study/mysql/索引/3_索引的创建时机/README)
+            * [4_慢查询日志和show profiles](/study/mysql/索引/4_慢查询日志和showprofiles/README)
+        * [**mysql锁**](/study/mysql/锁/README)
+        * [**mysql主从复制**](/study/mysql/mysql主从复制/README)
+
+     * [redis](/study/redis/README)
+        * [**redis安装和介绍**](/study/redis/redis安装和介绍/README)
+        * [**redis持久化**](/study/redis/redis持久化/README)
+        * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
+        * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
+        * [**redis主从复制**](/study/redis/redis主从复制.md)
+    
+
+
     
     * [netty](/study/netty/尚硅谷netty/README)
         * [第 1 章 Netty 介绍和应用场景](/study/netty/尚硅谷netty/_content/chapter01)
@@ -73,10 +83,3 @@
         * [第 10 章 Netty 核心源码剖析](/study/netty/尚硅谷netty/_content/chapter10)
         * [第 11 章 用 Netty 自己实现 Dubbo RPC](/study/netty/尚硅谷netty/_content/chapter11)
 
-    * [jvm](/study/jvm/README)
-        * [0_JVM体系结构](/study/jvm/0_JVM体系结构/README)
-        * [1_什么是GCRoots能做什么](/study/jvm/1_什么是GCRoots能做什么/README)
-        * [2_JVM参数调优](/study/jvm/2_JVM参数调优/README)
-        * [3_Java中的强引用_软引用_弱引用_虚引用分别是什么](/study/jvm/3_Java中的强引用_软引用_弱引用_虚引用分别是什么/README)
-        * [4_Java内存溢出OOM](/study/jvm/4_Java内存溢出OOM/README)
-        * [5_垃圾回收器](/study/jvm/5_垃圾回收器/README)
