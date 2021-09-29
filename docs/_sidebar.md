@@ -79,4 +79,6 @@
         * [第 9 章 TCP 粘包和拆包及解决方案](/study/netty/尚硅谷netty/_content/chapter09)
         * [第 10 章 Netty 核心源码剖析](/study/netty/尚硅谷netty/_content/chapter10)
         * [第 11 章 用 Netty 自己实现 Dubbo RPC](/study/netty/尚硅谷netty/_content/chapter11)
+    * [Spring&SpringBoot](/study/Spring&SpringBoot/README)
+        * [**springboot自动装配原理**](/study/Spring&SpringBoot/springboot自动装配原理/README)   
 
