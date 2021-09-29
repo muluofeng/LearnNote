@@ -66,6 +66,9 @@
         * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
         * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
         * [**redis主从复制**](/study/redis/redis主从复制.md)
+        
+    * [Spring&SpringBoot](/study/Spring&SpringBoot/README)
+        * [**springboot自动装配原理**](/study/Spring&SpringBoot/springboot自动装配原理/README)   
 
     * [netty](/study/netty/尚硅谷netty/README)
         * [第 1 章 Netty 介绍和应用场景](/study/netty/尚硅谷netty/_content/chapter01)
@@ -79,6 +82,5 @@
         * [第 9 章 TCP 粘包和拆包及解决方案](/study/netty/尚硅谷netty/_content/chapter09)
         * [第 10 章 Netty 核心源码剖析](/study/netty/尚硅谷netty/_content/chapter10)
         * [第 11 章 用 Netty 自己实现 Dubbo RPC](/study/netty/尚硅谷netty/_content/chapter11)
-    * [Spring&SpringBoot](/study/Spring&SpringBoot/README)
-        * [**springboot自动装配原理**](/study/Spring&SpringBoot/springboot自动装配原理/README)   
+
 

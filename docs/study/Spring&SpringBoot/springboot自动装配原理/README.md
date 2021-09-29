@@ -1,5 +1,62 @@
+### 什么是SPI
+SPI ，全称为 Service Provider Interface(服务提供者接口)，是一种服务发现机制。它通过在classpath路径下的META-INF/services文件夹查找文件，自动加载文件中所定义的类。
+
+定义接口 和实现类
+
+```java
+/**
+ * 服务提供者 动物
+ */
+public interface Animal {
+
+    // 叫
+    void call();
+}
+
+public class Cat implements Animal {
+    @Override
+    public void call() {
+        System.out.println("喵喵喵～～");
+    }
+}
+
+public class Dog implements Animal {
+
+    @Override
+    public void call() {
+        System.out.println("汪汪汪!!!");
+    }
+}
+
+```
+
+
+
+比如 META-INF/services/com.example.Animal 文件添加: 里面的内容就是 ：  接口的全限定类名就是文件名
+
+```java
+com.example.zoo.Dog
+```
+
+编写测试类
+
+```java
+public class SpiTest {
+
+    public static void main(String[] args) {
+        // 使用Java的ServiceLoader进行加载
+        ServiceLoader<Animal> load = ServiceLoader.load(Animal.class);
+        load.forEach(Animal::call);
+    }
+}
+```
+
+我们在resources下创建了一个文件，里面放了些实现类，然后通过`ServiceLoader`这个类加载器就把它们加载出来了
+
+
 
 ###  什么是自动装配
+
 SpringBoot 定义了一套接口规范，这套规范规定：SpringBoot 在启动时会扫描外部引用 jar 包中的META-INF/spring.factories文件，将文件中配置的类型信息加载到 Spring 容器（此处涉及到 JVM 类加载机制与 Spring 的容器知识），并执行类中定义的各种操作。对于外部 jar 来说，只需要按照 SpringBoot 定义的标准，就能将自己的功能装置进 SpringBoot。通过注解或者一些简单的配置就能在 Spring Boot 的帮助下实现某块功能
 
 
