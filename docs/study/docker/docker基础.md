@@ -14,7 +14,6 @@ curl -sSL https://get.daocloud.io/docker | sh
     "https://0bcwtqv1.mirror.aliyuncs.com"
   ],
   "insecure-registries": [
-    "106.54.237.135:5000",
     "47.114.62.126:5000"
   ]
 }
