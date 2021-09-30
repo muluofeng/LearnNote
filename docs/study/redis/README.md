@@ -6,3 +6,5 @@
         * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
         * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
         * [**redis主从复制**](/study/redis/redis主从复制.md)
+        * [**redis搭建哨兵模式**](/study/redis/redis搭建哨兵模式.md)
+

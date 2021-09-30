@@ -1,4 +1,4 @@
-* 导读
+* 目录
     * [java基础](/study/java基础/README)
         * [1_equals和等等的区别](/study/java基础/1_equals和等等的区别/README)
         * [2_代码块](/study/java基础/2_代码块/README)
@@ -66,6 +66,7 @@
         * [**redis的基础数据类型**](/study/redis/redis的基础数据类型/README)
         * [**redis事务和订阅**](/study/redis/redis事务和订阅/README)
         * [**redis主从复制**](/study/redis/redis主从复制.md)
+        * [**redis搭建哨兵模式**](/study/redis/redis搭建哨兵模式.md)
         
     * [Spring&SpringBoot](/study/Spring&SpringBoot/README)
         * [**springboot自动装配原理**](/study/Spring&SpringBoot/springboot自动装配原理/README)   
@@ -90,3 +91,11 @@
         * [Docker图形化管理工具之Portainer](/study/docker/Docker图形化管理工具之Portainer)
         * [IDEA下利用docker打包springboot项目](/study/docker/IDEA下利用docker打包springboot项目)
         * [docker安装gitlab](/study/docker/docker安装gitlab)
+    
+    * [linux](/study/linux/README)
+        * [linux系统介绍和目录](/study/linux/linux系统介绍和目录)
+        * [linux常用的一些命令](/study/linux/linux常用的一些命令)
+        * [nginx配置websocket](/study/linux/nginx配置websocket)
+        * [mac下brew常用的命令](/study/linux/mac下brew常用的命令)
+        * [java前后端发布脚本](/study/linux/java前后端发布脚本)
+
