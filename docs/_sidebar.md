@@ -70,6 +70,7 @@
         
     * [Spring&SpringBoot](/study/Spring&SpringBoot/README)
         * [**springboot自动装配原理**](/study/Spring&SpringBoot/springboot自动装配原理/README)   
+        * [**springboot自定义starter**](/study/Spring&SpringBoot/springboot自定义starter)   
 
     * [netty](/study/netty/尚硅谷netty/README)
         * [第 1 章 Netty 介绍和应用场景](/study/netty/尚硅谷netty/_content/chapter01)
