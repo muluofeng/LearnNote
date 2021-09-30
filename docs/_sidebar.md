@@ -82,7 +82,10 @@
         * [第 9 章 TCP 粘包和拆包及解决方案](/study/netty/尚硅谷netty/_content/chapter09)
         * [第 10 章 Netty 核心源码剖析](/study/netty/尚硅谷netty/_content/chapter10)
         * [第 11 章 用 Netty 自己实现 Dubbo RPC](/study/netty/尚硅谷netty/_content/chapter11)
+        
     * [docker](/study/docker/README)
         * [docker-compose构建springboot应用](/study/docker/docker-compose构建springboot应用)
         * [docker打包openjdk字体问题](/study/docker/docker打包openjdk字体问题)
         * [Docker图形化管理工具之Portainer](/study/docker/Docker图形化管理工具之Portainer)
+        * [IDEA下利用docker打包springboot项目](/study/docker/IDEA下利用docker打包springboot项目)
+        * [docker安装gitlab](/study/docker/docker安装gitlab)
