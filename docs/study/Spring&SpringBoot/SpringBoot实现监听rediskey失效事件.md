@@ -77,15 +77,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
-
-/**
- * 配置
- */
 @Configuration
 public class RedisListenerConfig {
+  
     @Bean
     RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory) {
-
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
 //        container.addMessageListener(new RedisExpiredListener(), new PatternTopic("__keyevent@0__:expired"));
@@ -93,7 +89,7 @@ public class RedisListenerConfig {
     }
 }
 ```
--  3. * 定义监听器，实现KeyExpirationEventMessageListener接口，查看源码发现，该接口监听所有db的过期事件keyevent@*:expired"
+-  3.  定义监听器，实现KeyExpirationEventMessageListener接口，查看源码发现，该接口监听所有db的过期事件keyevent@*:expired"
 
 ```java
 import org.springframework.beans.factory.annotation.Autowired;
