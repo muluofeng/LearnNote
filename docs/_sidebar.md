@@ -1,5 +1,5 @@
 * 目录
-    * [JUC]
+    * [**JUC**]
       * [1_谈谈Volatile]
         * [1_Volatile和JMM内存模型的可见性](/study/JUC/1_谈谈Volatile/1_Volatile和JMM内存模型的可见性/README)
         * [2_Volatile不保证原子性](/study/JUC/1_谈谈Volatile/2_Volatile不保证原子性/README)
@@ -27,9 +27,11 @@
       * [13_Github学习](/study/JUC/13_Github学习/README)
       * [14_乐观锁和悲观锁](/study/JUC/14_乐观锁和悲观锁/README)
       * [15.threadlocal](/study/JUC/15.threadlocal/README)
-    * [MQ]
+    * [**MQ**]
       * [rabbitmq入门.md](/study/MQ/rabbitmq入门.md)
-    * [Maven&Gradle]
+    * [**Maven&Gradle**]
+      * [Gradle]
+        * [gradle入门.md](/study/Maven&Gradle/Gradle/gradle入门.md)
       * [Maven]
         * [IDEA下maven多项目构建.md](/study/Maven&Gradle/Maven/IDEA下maven多项目构建.md)
         * [Maven依赖传递、依赖传递排除、依赖冲突.md](/study/Maven&Gradle/Maven/Maven依赖传递、依赖传递排除、依赖冲突.md)
@@ -37,14 +39,15 @@
         * [maven打包springboot的jar包的一些问题.md](/study/Maven&Gradle/Maven/maven打包springboot的jar包的一些问题.md)
         * [maven把jar包放到本地仓库.md](/study/Maven&Gradle/Maven/maven把jar包放到本地仓库.md)
         * [springboot应用作为依赖.md](/study/Maven&Gradle/Maven/springboot应用作为依赖.md)
-    * [Mybatis]
+    * [**Mybatis**]
       * [mybatis是如何和spring进行整合的.md](/study/Mybatis/mybatis是如何和spring进行整合的.md)
-    * [Spring&SpringBoot]
+      * [mybatis缓存.md](/study/Mybatis/mybatis缓存.md)
+    * [**Spring&SpringBoot**]
       * [SpringBoot实现监听rediskey失效事件.md](/study/Spring&SpringBoot/SpringBoot实现监听rediskey失效事件.md)
       * [springboot自动装配原理](/study/Spring&SpringBoot/springboot自动装配原理/README)
       * [springboot自定义starter.md](/study/Spring&SpringBoot/springboot自定义starter.md)
       * [常用注解.md](/study/Spring&SpringBoot/常用注解.md)
-    * [docker]
+    * [**docker**]
       * [Docker图形化管理工具之Portainer.md](/study/docker/Docker图形化管理工具之Portainer.md)
       * [IDEA下利用docker打包springboot项目.md](/study/docker/IDEA下利用docker打包springboot项目.md)
       * [docker-compose构建springboot应用.md](/study/docker/docker-compose构建springboot应用.md)
@@ -53,7 +56,7 @@
       * [docker安装mysql5.7和主从复制.md](/study/docker/docker安装mysql5.7和主从复制.md)
       * [docker打包openjdk字体问题.md](/study/docker/docker打包openjdk字体问题.md)
       * [docker服务启动了端口无法访问的问题.md](/study/docker/docker服务启动了端口无法访问的问题.md)
-    * [java基础]
+    * [**java基础**]
       * [1_equals和等等的区别](/study/java基础/1_equals和等等的区别/README)
       * [2_代码块](/study/java基础/2_代码块/README)
       * [3_JDK动态代理和CGLIB动态代理](/study/java基础/3_JDK动态代理和CGLIB动态代理/README)
@@ -66,14 +69,14 @@
       * [7_创建对象的方式](/study/java基础/7_创建对象的方式/README)
       * [8_字符串](/study/java基础/8_字符串/README)
       * [9_java日志](/study/java基础/9_java日志/README)
-    * [jvm]
+    * [**jvm**]
       * [0_JVM体系结构](/study/jvm/0_JVM体系结构/README)
       * [1_什么是GCRoots能做什么](/study/jvm/1_什么是GCRoots能做什么/README)
       * [2_JVM参数调优](/study/jvm/2_JVM参数调优/README)
       * [3_Java中的强引用_软引用_弱引用_虚引用分别是什么](/study/jvm/3_Java中的强引用_软引用_弱引用_虚引用分别是什么/README)
       * [4_Java内存溢出OOM](/study/jvm/4_Java内存溢出OOM/README)
       * [5_垃圾回收器](/study/jvm/5_垃圾回收器/README)
-    * [linux]
+    * [**linux**]
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
       * [linux常用的一些命令.md](/study/linux/linux常用的一些命令.md)
@@ -82,16 +85,16 @@
       * [mac下brew常用的命令.md](/study/linux/mac下brew常用的命令.md)
       * [nginx配置websocket.md](/study/linux/nginx配置websocket.md)
       * [部署安装elasticsearch.md](/study/linux/部署安装elasticsearch.md)
-    * [mysql]
+    * [**mysql**]
       * [mysql主从复制](/study/mysql/mysql主从复制/README)
       * [事务隔离级别](/study/mysql/事务隔离级别/README)
       * [索引]
-        * [1_MySQL的存储引擎]
+        * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/README)
         * [2_索引分类和索引优化](/study/mysql/索引/2_索引分类和索引优化/README)
         * [3_索引的创建时机](/study/mysql/索引/3_索引的创建时机/README)
         * [4_慢查询日志和showprofiles](/study/mysql/索引/4_慢查询日志和showprofiles/README)
       * [锁](/study/mysql/锁/README)
-    * [netty]
+    * [**netty**]
       * [BIO、NIO、AIO.md](/study/netty/BIO、NIO、AIO.md)
       * [尚硅谷netty]
         * [_content]
@@ -107,12 +110,12 @@
           * [chapter10.md](/study/netty/尚硅谷netty/_content/chapter10.md)
           * [chapter11.md](/study/netty/尚硅谷netty/_content/chapter11.md)
           * [chapter_blank.md](/study/netty/尚硅谷netty/_content/chapter_blank.md)
-    * [redis]
+    * [**redis**]
       * [redis主从复制.md](/study/redis/redis主从复制.md)
       * [redis事务和订阅](/study/redis/redis事务和订阅/README)
       * [redis安装和介绍](/study/redis/redis安装和介绍/README)
       * [redis持久化](/study/redis/redis持久化/README)
       * [redis搭建哨兵模式.md](/study/redis/redis搭建哨兵模式.md)
       * [redis的基础数据类型](/study/redis/redis的基础数据类型/README)
-    * [分布式]
+    * [**分布式**]
       * [3_分布式锁](/study/分布式/3_分布式锁/README)

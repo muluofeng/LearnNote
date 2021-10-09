@@ -39,6 +39,13 @@ function printDir(){
                     echo  "* [$element](/study$path/README)">>$targetMd
                     continue
                 fi    
+
+                if  [ $fileCount -eq 1 ] && [ $readmeCount -ne 1 ]
+                then
+                    printf '%0.s  ' $(seq 0 $counter)>>$targetMd 
+                    echo  "* [$element]">>$targetMd
+                    printDir $dir_or_file
+                fi    
             else
                 if [ $element = "images" ]
                 then 
@@ -78,7 +85,7 @@ do
     # 是目录
     if [ -d "$root/$file" ]
     then
-          echo "    * [$file]">>$targetMd
+          echo "    * [**$file**]">>$targetMd
            printDir $root/$file
 
     else
@@ -86,3 +93,22 @@ do
         continue
     fi
 done    
+
+# readme 修改
+targetREADMEMd="/Users/xing/Documents/muluofeng.github.io/docs/README.md"
+cat /dev/null>$targetREADMEMd
+echo "# 学习笔记">>$targetREADMEMd
+echo "* 首页">>$targetREADMEMd
+
+for file in $(ls ./ | sort -V )
+do
+    # 是目录
+    if [ -d "$root/$file" ]
+    then
+          echo "    * [**$file**]()">>$targetREADMEMd
+    fi
+done    
+
+echo "###### 敖丙github https://github.com/AobingJava/JavaFamily">>$targetREADMEMd
+echo "###### 互联网 Java 工程师进阶知识完全扫盲https://github.com/doocs/advanced-java">>$targetREADMEMd
+echo "###### CS-Notes https://github.com/CyC2018/CS-Notes">>$targetREADMEMd
