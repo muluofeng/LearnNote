@@ -4,8 +4,9 @@ function printDir(){
      do
         dir_or_file=$1"/"$element
         # / 的数量
-        counter=`echo $dir_or_file | grep -o / | wc -l`
-        let counter-=6
+        dircounter=`echo $dir_or_file | grep -o / | wc -l`
+        rootCount=`echo $root | grep -o / | wc -l`
+        counter=`expr $dircounter - $rootCount`
         let length=${#root}
 
         path=${dir_or_file:$length}

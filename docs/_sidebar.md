@@ -44,6 +44,7 @@
       * [mybatis缓存.md](/study/Mybatis/mybatis缓存.md)
     * [**Spring&SpringBoot**]
       * [SpringBoot实现监听rediskey失效事件.md](/study/Spring&SpringBoot/SpringBoot实现监听rediskey失效事件.md)
+      * [springboot事务.md](/study/Spring&SpringBoot/springboot事务.md)
       * [springboot自动装配原理](/study/Spring&SpringBoot/springboot自动装配原理/README)
       * [springboot自定义starter.md](/study/Spring&SpringBoot/springboot自定义starter.md)
       * [常用注解.md](/study/Spring&SpringBoot/常用注解.md)
@@ -84,10 +85,16 @@
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)
       * [mac下brew常用的命令.md](/study/linux/mac下brew常用的命令.md)
       * [nginx配置websocket.md](/study/linux/nginx配置websocket.md)
+      * [shadowsocks安装和使用.md](/study/linux/shadowsocks安装和使用.md)
       * [部署安装elasticsearch.md](/study/linux/部署安装elasticsearch.md)
     * [**mysql**]
       * [mysql主从复制](/study/mysql/mysql主从复制/README)
       * [事务隔离级别](/study/mysql/事务隔离级别/README)
+      * [其他]
+        * [MySQL大字段索引.md](/study/mysql/其他/MySQL大字段索引.md)
+        * [case-when使用.md](/study/mysql/其他/case-when使用.md)
+        * [tinyint(1)和tinyint(4)的区别.md](/study/mysql/其他/tinyint(1)和tinyint(4)的区别.md)
+        * [@变量的使用.md](/study/mysql/其他/@变量的使用.md)
       * [索引]
         * [1_MySQL的存储引擎](/study/mysql/索引/1_MySQL的存储引擎/README)
         * [2_索引分类和索引优化](/study/mysql/索引/2_索引分类和索引优化/README)
