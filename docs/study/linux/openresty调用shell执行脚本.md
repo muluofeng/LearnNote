@@ -41,7 +41,7 @@ chmod 0666 /tmp/shell.sock
 ```shell
 ##安装
 git clone https://github.com/juce/lua-resty-shell
-cp lua-resty-shell/lib/resty/shell.lua ./lualib/resty/
+cp lua-resty-shell/lib/resty/shell.lua   /usr/local/openresty/lualib/resty/shell.lua
 
 ```
 书写需要执行的命令
@@ -76,3 +76,11 @@ openresty -s reload
 ```
 
 访问   http://ip:port/api/git-hook
+
+
+### 6 遇到的问题
+ - local shell = require "resty.shell"  attempt to call field 'execute' (a nil value)
+ 没有把 lua-resty-shell 的shelll 放到openresty下面
+
+ - failed to load external Lua file "xxxx.lua": cannot open xxxx.lua: Permission denied
+ 由于openresty 启动的用户  对  lua脚本所在目录没有执行权限，修改 nginx.conf  的 user 为 lua脚本所在目录的用户
