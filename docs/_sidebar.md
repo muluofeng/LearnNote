@@ -85,6 +85,7 @@
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)
       * [mac下brew常用的命令.md](/study/linux/mac下brew常用的命令.md)
       * [nginx配置websocket.md](/study/linux/nginx配置websocket.md)
+      * [openresty调用shell执行脚本.md](/study/linux/openresty调用shell执行脚本.md)
       * [shadowsocks安装和使用.md](/study/linux/shadowsocks安装和使用.md)
       * [部署安装elasticsearch.md](/study/linux/部署安装elasticsearch.md)
     * [**mysql**]
