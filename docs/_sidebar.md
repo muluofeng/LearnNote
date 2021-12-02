@@ -27,7 +27,7 @@
       * [13_Github学习](/study/JUC/13_Github学习/README)
       * [14_乐观锁和悲观锁](/study/JUC/14_乐观锁和悲观锁/README)
       * [15.threadlocal](/study/JUC/15.threadlocal/README)
-      * [16_线上cpu100%问题排查](/study/JUC/16_线上cpu100%问题排查/README)
+      * [16_线上cpu100百分之百问题排查](/study/JUC/16_线上cpu100百分之百问题排查/README)
     * [**MQ**]
       * [rabbitmq入门.md](/study/MQ/rabbitmq入门.md)
     * [**Maven&Gradle**]
