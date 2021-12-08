@@ -80,6 +80,7 @@
       * [4_Java内存溢出OOM](/study/jvm/4_Java内存溢出OOM/README)
       * [5_垃圾回收器](/study/jvm/5_垃圾回收器/README)
     * [**linux**]
+      * [grep的使用.md](/study/linux/grep的使用.md)
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
       * [linux常用的一些命令.md](/study/linux/linux常用的一些命令.md)
