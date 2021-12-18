@@ -97,6 +97,7 @@
       * [其他]
         * [MySQL大字段索引.md](/study/mysql/其他/MySQL大字段索引.md)
         * [case-when使用.md](/study/mysql/其他/case-when使用.md)
+        * [mysqldump到处sql.md](/study/mysql/其他/mysqldump到处sql.md)
         * [tinyint(1)和tinyint(4)的区别.md](/study/mysql/其他/tinyint(1)和tinyint(4)的区别.md)
         * [@变量的使用.md](/study/mysql/其他/@变量的使用.md)
       * [索引]

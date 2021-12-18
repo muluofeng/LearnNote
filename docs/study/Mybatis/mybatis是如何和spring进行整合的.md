@@ -36,7 +36,7 @@ pom 添加
 
 ###  集成源码分析
 
-![image](https://note.youdao.com/yws/public/resource/1d675de19d80a20f1d5e40438502197a/xmlnote/5B6CA78EACC143DC93BA4704F94AD78B/13951)
+![image](https://qiniu.muluofeng.com//uPic/%202021%2012%20/13951.png)
 
 统一的配置文件 spring.factories
 必须在classpath下的META-INF文件夹下创建一个spring.factories，本质是一个Properties，所以得按照key-value的形式进行配置，这里使用springboot自动配置的功能（
@@ -50,7 +50,7 @@ org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration
 
 下面主要分析 MybatisAutoConfiguration ==MybatisAutoConfiguration 是spring boot 下 mybatis 默认的配置类，只要开启了注释了 @EnableAutoConfiguration 就可以了，spring boot 会默认执行。在SpringBoot启动的过程中 @SpringBootApplication 中组合了 EnableAutoConfiguration ，属于spring boot 自动配置和启动过程，SpringBoot启动时会进入到MybatisAutoConfiguration这个类里，这是一个自动配置类，这里面初始化了SqlSessionFactory、SqlSessionTemplate等一些我们在Spring项目中需要手动配置的==
 
-![image](https://note.youdao.com/yws/public/resource/1d675de19d80a20f1d5e40438502197a/xmlnote/D615A10AF3CB467C9218A5B2D228AEFC/13966)
+![image](https://qiniu.muluofeng.com//uPic/%202021%2012%20/13966-20211217171519227.png)
 
 
 注解分析
@@ -75,7 +75,7 @@ EnableConfigurationProperties注解和MybatisProperties类:配置自己的Mybati
 
 ## 通过@MapperScan 注解来实现mapper注入到spring容器
 
-![image](https://note.youdao.com/yws/public/resource/1d675de19d80a20f1d5e40438502197a/xmlnote/482E98CD03AE49348CF7EF1D4238E2C0/13980)
+![image](https://qiniu.muluofeng.com//uPic/%202021%2012%20/13980.png)
 
 @Import(MapperScannerRegistrar.class) 会调用MapperScannerRegistrar 这个类
 
@@ -87,7 +87,7 @@ spring官方就是用这种方式，实现了@Component、@Service等注解的�
 
 核心代码分析 ==ClassPathMapperScanner.doScan==
 
-![image](https://note.youdao.com/yws/public/resource/1d675de19d80a20f1d5e40438502197a/xmlnote/240E3DF8567347DF93E59A61EB8ACED8/14018)
+![image](https://qiniu.muluofeng.com//uPic/%202021%2012%20/14018.png)
 
 
 ```
@@ -123,7 +123,7 @@ spring官方就是用这种方式，实现了@Component、@Service等注解的�
   }
 ```
 核心方法 MapperRegistry getMapper
-![image](https://note.youdao.com/yws/public/resource/1d675de19d80a20f1d5e40438502197a/xmlnote/74405130533447A797248707C5E19054/14038)
+![image](https://qiniu.muluofeng.com//uPic/%202021%2012%20/14038.png)
 
 这个方法通过调用MapperProxyFactory类，生成一个代理实例MapperProxy并返回
 
