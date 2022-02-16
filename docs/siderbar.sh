@@ -46,7 +46,7 @@ function printDir(){
                     echo  "* [$element](/study$path/README)">>$targetMd
                     continue
                 fi    
-
+                    # 其他情况
                     printf '%0.s  ' $(seq 0 $counter)>>$targetMd 
                     echo  "* [$element]">>$targetMd
                     printDir $dir_or_file
