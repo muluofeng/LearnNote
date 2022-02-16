@@ -188,7 +188,7 @@ System.out.println( s2 == s3.intern());
 
 
 
-下面解释关于 intern方法
+下面解释关于 intern      方法
 
 ```
 一句话，intern方法就是从常量池中获取对象
