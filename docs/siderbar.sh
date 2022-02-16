@@ -24,16 +24,22 @@ function printDir(){
             fileCount=`ls -1 $dir_or_file/ | wc -l`
             imagesCount=`ls -1 $dir_or_file/ | grep -o images| wc -l`
             readmeCount=`ls -1 $dir_or_file/ | grep -o README| wc -l`
-    
+
+            echo  "$dir_or_file"
+            echo  "$fileCount"
+            echo  "$imagesCount"
+            echo  "$readmeCount"
             # if [ [ $fileCount -eq 2 ] && [$imagesCount -eq 1 ] && [$readmeCount -eq 1 ]] || [[ $fileCount -eq 1 ] && [$readmeCount -eq 1 ]]
             if [ $fileCount -eq 2 ] || [ $fileCount -eq 1 ] 
             then
+                # 1个图片目录 1个readme
                 if  [ $imagesCount -eq 1 ] && [ $readmeCount -eq 1 ]
                 then
                     printf '%0.s  ' $(seq 0 $counter)>>$targetMd 
                     echo  "* [$element](/study$path/README)">>$targetMd
                     continue
-                fi    
+                fi
+                 #  1个readme    
                 if  [ $fileCount -eq 1 ] && [ $readmeCount -eq 1 ]
                 then
                     printf '%0.s  ' $(seq 0 $counter)>>$targetMd 
@@ -41,12 +47,9 @@ function printDir(){
                     continue
                 fi    
 
-                if  [ $fileCount -eq 1 ] && [ $readmeCount -ne 1 ]
-                then
                     printf '%0.s  ' $(seq 0 $counter)>>$targetMd 
                     echo  "* [$element]">>$targetMd
                     printDir $dir_or_file
-                fi    
             else
                 if [ $element = "images" ]
                 then 
@@ -86,6 +89,7 @@ do
     # 是目录
     if [ -d "$root/$file" ]
     then
+          echo "    * [**$file**]"
           echo "    * [**$file**]">>$targetMd
            printDir $root/$file
 
