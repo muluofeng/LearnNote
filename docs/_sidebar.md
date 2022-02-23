@@ -86,6 +86,9 @@
       * [grep的使用.md](/study/linux/grep的使用.md)
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
+      * [k8s]
+        * [k8s入门.md](/study/linux/k8s/k8s入门.md)
+        * [mac环境下k8s安装.md](/study/linux/k8s/mac环境下k8s安装.md)
       * [linux常用的一些命令.md](/study/linux/linux常用的一些命令.md)
       * [linux硬盘挂载.md](/study/linux/linux硬盘挂载.md)
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)
