@@ -140,6 +140,8 @@
     * [**前端**]
       * [css]
       * [vue]
+    * [**测试**]
+      * [selenium使用.md](/study/测试/selenium使用.md)
     * [**计算机网络**]
       * [网络IO.md](/study/计算机网络/网络IO.md)
       * [网络模型.md](/study/计算机网络/网络模型.md)
