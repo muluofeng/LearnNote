@@ -81,8 +81,14 @@
       * [5_垃圾回收器](/study/jvm/5_垃圾回收器/README)
     * [**linux**]
       * [git]
+        * [gitmerge和gitrebase.md](/study/linux/git/gitmerge和gitrebase.md)
         * [git入门.md](/study/linux/git/git入门.md)
         * [git版本回退.md](/study/linux/git/git版本回退.md)
+        * [img]
+          * [1646809081705.png](/study/linux/git/img/1646809081705.png)
+          * [1646809095810.png](/study/linux/git/img/1646809095810.png)
+          * [1646809313170.png](/study/linux/git/img/1646809313170.png)
+          * [1646809344969.png](/study/linux/git/img/1646809344969.png)
       * [grep的使用.md](/study/linux/grep的使用.md)
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
