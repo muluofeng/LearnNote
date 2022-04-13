@@ -24,8 +24,11 @@ mStringThreadLocal.remove();
 
 ![image-20200329172158610](images/1660f7ebfeecebf2)
 
-
 ThreadLocal只是操作Thread中的ThreadLocalMap，每个Thread都有一个map，ThreadLocalMap是线程内部属性，ThreadLocalMap生命周期是和Thread一样的，不依赖于ThreadMap。ThreadLocal通过Entry保存在map中，key为Thread的弱引用（GC时会自动回收），value为存入的变量副本，一个线程不管有多少个ThreadLocal，都是通过一个ThreadLocalMap来存放局部变量的，可以再源码中看到，set值时先获取map对象，如果不存在则创建，threadLocalMap初始大小为16，当容量超过2/3时会自动扩容
+
+
+
+![DA4439A8-D15A-43A8-AC27-679988EF07B2](https://qiniu.muluofeng.com//uPic/%202022%2004%20/DA4439A8-D15A-43A8-AC27-679988EF07B2.png)
 
 
 ### 建议

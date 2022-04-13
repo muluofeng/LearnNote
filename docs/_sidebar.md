@@ -58,7 +58,9 @@
       * [docker安装mysql5.7和主从复制.md](/study/docker/docker安装mysql5.7和主从复制.md)
       * [docker打包openjdk字体问题.md](/study/docker/docker打包openjdk字体问题.md)
       * [docker服务启动了端口无法访问的问题.md](/study/docker/docker服务启动了端口无法访问的问题.md)
+      * [docker部署docker服务.md](/study/docker/docker部署docker服务.md)
       * [kong网关docker搭建.md](/study/docker/kong网关docker搭建.md)
+    * [**go**]
     * [**java基础**]
       * [1_equals和等等的区别](/study/java基础/1_equals和等等的区别/README)
       * [2_代码块](/study/java基础/2_代码块/README)
@@ -99,6 +101,8 @@
       * [linux硬盘挂载.md](/study/linux/linux硬盘挂载.md)
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)
       * [mac下brew常用的命令.md](/study/linux/mac下brew常用的命令.md)
+      * [nginx不能转发指定header的问题.md](/study/linux/nginx不能转发指定header的问题.md)
+      * [nginx的root和alias区别.md](/study/linux/nginx的root和alias区别.md)
       * [nginx配置websocket.md](/study/linux/nginx配置websocket.md)
       * [openresty调用shell执行脚本.md](/study/linux/openresty调用shell执行脚本.md)
       * [shadowsocks安装和使用.md](/study/linux/shadowsocks安装和使用.md)
