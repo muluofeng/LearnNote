@@ -95,8 +95,9 @@
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
       * [k8s]
+        * [k8s使用.md](/study/linux/k8s/k8s使用.md)
         * [k8s入门.md](/study/linux/k8s/k8s入门.md)
-        * [k8s安装和使用.md](/study/linux/k8s/k8s安装和使用.md)
+        * [linux下k8s集群安装.md](/study/linux/k8s/linux下k8s集群安装.md)
       * [linux常用的一些命令.md](/study/linux/linux常用的一些命令.md)
       * [linux硬盘挂载.md](/study/linux/linux硬盘挂载.md)
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)
