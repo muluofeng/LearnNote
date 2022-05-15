@@ -10,7 +10,7 @@
 
 - 添加规则
 
-  <img src="/Users/muluofeng/Library/Application Support/typora-user-images/image-20220515121031706.png" alt="image-20220515121031706" style="zoom:33%;" />
+  <img src="https://qiniu.muluofeng.com//uPic/202205/image-20220515121031706.png" alt="image-20220515121031706" style="zoom:33%;" />
 
   <img src="https://qiniu.muluofeng.com//uPic/202205/image-20220515121121085.png" alt="image-20220515121121085" style="zoom:33%;" />
 
@@ -29,7 +29,7 @@
  curl http://springbootdemo.mall-app.10.0.12.2.nip.io:30960/api/student/selectOne?id=3
 ```
 
-![image-20220515121502792](/Users/muluofeng/Library/Application Support/typora-user-images/image-20220515121502792.png)
+![image-20220515121502792](https://qiniu.muluofeng.com//uPic/202205/image-20220515121502792.png)
 
 ## http 域名代理ingress
 
