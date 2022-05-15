@@ -22,7 +22,7 @@
 
   <img src="https://qiniu.muluofeng.com//uPic/202205/image-20220515121357869.png" alt="image-20220515121357869" style="zoom:33%;" />
 
-在服务器上使用curl 试试能不能访问
+在服务器上使用curl 试试能不能访问, 我这里的地址 是  ：https://www.xxx.com/api/student/selectOne?id=1
 
 ```shell
  ##	域名+端口 + 指定的api
