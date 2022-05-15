@@ -63,6 +63,7 @@
         * [k8s使用.md](/study/docker/k8s/k8s使用.md)
         * [kubesphere安装.md](/study/docker/k8s/kubesphere安装.md)
         * [kubesphere的devops使用.md](/study/docker/k8s/kubesphere的devops使用.md)
+        * [kubesphere路由使用https代理.md](/study/docker/k8s/kubesphere路由使用https代理.md)
         * [linux下k8s集群安装.md](/study/docker/k8s/linux下k8s集群安装.md)
       * [kong网关docker搭建.md](/study/docker/kong网关docker搭建.md)
     * [**go**]
