@@ -311,3 +311,21 @@ kubectl get pod,svc -n ingress-nginx
 ![image-20220504220642972](https://qiniu.muluofeng.com//uPic/%202022%2005%20/image-20220504220642972.png)
 
 使用 ingress 代理服务
+
+
+
+
+
+
+
+### k8s常用命令
+
+```shell
+##查看日志
+kubectl  logs -n  namespace  podName      -f  --tail=100
+```
+
+
+
+
+

@@ -80,6 +80,8 @@
       * [7_创建对象的方式](/study/java基础/7_创建对象的方式/README)
       * [8_字符串](/study/java基础/8_字符串/README)
       * [9_java日志](/study/java基础/9_java日志/README)
+      * [10_正则表达式](/study/java基础/10_正则表达式/README)
+      * [11_function](/study/java基础/11_function/README)
     * [**jvm**]
       * [0_JVM体系结构](/study/jvm/0_JVM体系结构/README)
       * [1_什么是GCRoots能做什么](/study/jvm/1_什么是GCRoots能做什么/README)
@@ -100,6 +102,8 @@
       * [grep的使用.md](/study/linux/grep的使用.md)
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
+      * [jenkins]
+        * [pipline部署java服务.md](/study/linux/jenkins/pipline部署java服务.md)
       * [linux常用的一些命令.md](/study/linux/linux常用的一些命令.md)
       * [linux硬盘挂载.md](/study/linux/linux硬盘挂载.md)
       * [linux系统介绍和目录.md](/study/linux/linux系统介绍和目录.md)

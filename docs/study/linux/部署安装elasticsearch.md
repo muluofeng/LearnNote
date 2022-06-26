@@ -114,3 +114,17 @@ POST http://localhost:9200/_analyze
 比较两个分词器对同一句中文的分词结果，ik_max_word比ik_smart得到的中文词更多（从两者的英文名含义就可看出来），但这样也带来一个问题，使用ik_max_word会占用更多的存储空间
 ```
 
+#### es 添加账号密码
+```shell
+#进入es安装目录下的config目录
+vim elasticsearch.yml
+
+# 配置X-Pack
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-headers: Authorization
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+
+## 进入到bin目录 执行设置密码
+./elasticsearch-setup-passwords interactive

@@ -265,3 +265,10 @@ kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get
 输入上面获取的token 进入到管理界面
 
 ![image-20220504204410823](https://qiniu.muluofeng.com//uPic/%202022%2005%20/image-20220504204410823.png)
+
+
+
+
+
+
+
