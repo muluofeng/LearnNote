@@ -21,7 +21,7 @@ pipeline {
    // 环境变量
  environment {
         // 镜像仓库地址
-        REGISTRY = '47.114.174.69:5000'
+        REGISTRY = 'ip地址:端口'
         // 镜像仓库用户名
         REGISTRY_USERNAME = '镜像仓库用户名'
    			// 镜像仓库密码
