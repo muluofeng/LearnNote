@@ -98,105 +98,6 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
        public static final String DELAYED_QUEUE_NAME = "delayed.queue";
        public static final String DELAYED_TPOCI_NAME = "delayed.topic";
    }
-   
-   
-   // 交换机、队列、topic 绑定
-   @Component
-   public class RabbitMQInitialize {
-       @Autowired
-       private CachingConnectionFactory rabbitConnectionFactory;
-       public void rabbitmqInitialize() {
-           // 新建交换机
-           RabbitAdmin admin = new RabbitAdmin(rabbitConnectionFactory);
-           Map<String, TopicExchange> map = new HashMap<String, TopicExchange>();
-           for (RabbitMQExchangeEnum exchanges : RabbitMQExchangeEnum.values()) {
-               String name = exchanges.getExchange();
-               TopicExchange exchange = new TopicExchange(name);
-               if (name.equals(Constant.DELAYED_EXCHANGE_NAME)) {
-                   exchange.setDelayed(true);
-               }
-               admin.declareExchange(exchange);
-               map.put(name, exchange);
-           }
-   
-           //交换机和 队列和 topic绑定
-           for (RabbitMQQueueEnum _queue : RabbitMQQueueEnum.values()) {
-               Queue queue = new Queue(_queue.getQueueName());
-               admin.declareQueue(queue);
-               TopicExchange exchange = map.get(_queue.getExchange());
-               String topic = _queue.getTopicName();
-               admin.declareBinding(BindingBuilder.bind(queue).to(exchange).with(topic));
-           }
-       }
-   }
-   //订阅队列的消费者
-   @Slf4j
-   @Service
-   @RequiredArgsConstructor
-   public class FzjcDelayedMessageConsumerListener extends BaseMessageConsumerListener implements ChannelAwareMessageListener {
-       @Override
-       public void onMessage(Message message, Channel channel) throws Exception {
-           try {
-               byte[] body = message.getBody();
-               log.info(new String(body));
-           } catch (Exception e) {
-               log.error(e.getMessage(), e);
-           }
-           channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-       }
-   }
-   
-   // 延迟队列指定  绑定对应的 消费者
-   @Component
-   public class FzjcDelayMessageSubscribe {
-   	@Autowired
-   	private CachingConnectionFactory rabbitConnectionFactory;
-   	@Autowired
-   	private FzjcDelayedMessageConsumerListener delayedMessageConsumerListener;
-   	public void receiveMessage() {
-   		SimpleMessageListenerContainer container =new SimpleMessageListenerContainer(rabbitConnectionFactory);
-   	    MessageListenerAdapter adapter = new MessageListenerAdapter(delayedMessageConsumerListener);
-   	    container.setMessageListener(adapter);
-   	    container.setPrefetchCount(Constant.DEFAULT_PREFETCH_COUNT);
-   	    container.setQueueNames(Constant.DELAYED_QUEUE_NAME);
-   	    container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
-   	    container.setDefaultRequeueRejected(false);
-   	    container.start();
-   	}
-   }
-   
-   //初始化绑定
-   @Component
-   public class RabbitMQSubscribe {
-       @Autowired
-       private FzjcDelayMessageSubscribe delayMessageSubscribe;
-   
-       /**
-        * 订阅所有RabbitMQ
-        */
-       public void subscribeAllRabbitMQ() {
-           delayMessageSubscribe.receiveMessage();
-       }
-   }
-   
-   
-   //发送延迟消息 调用示例
-     	@SneakyThrows
-       @Override
-       public <T extends BaseMessageDTO> void sendMessage(T message, String topic, Integer delay) {
-           String serialized = new ObjectMapper().writeValueAsString(message);
-           Message messageBuilder = MessageBuilder
-                   .withBody(serialized.getBytes(CHARSET_UTF8))
-                   .setType(RabbitMQExchangeEnum.IntegralExchange.getExchange())
-                   .setCorrelationId(UUID.randomUUID().toString())
-                   .setDeliveryMode(MessageDeliveryMode.PERSISTENT)
-                   .build();
-           this.rabbitTemplate.convertAndSend(Constant.DELAYED_EXCHANGE_NAME, topic, messageBuilder,a->{
-               a.getMessageProperties().setDelay(delay);
-           });
-       }
-   
-   
    ```
 
    ```java
@@ -216,4 +117,116 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
    }
    ```
 
+   ```java
+   // 交换机、队列、topic 绑定
+   @Component
+   public class RabbitMQInitialize {
+       @Autowired
+       private CachingConnectionFactory rabbitConnectionFactory;
+       public void rabbitmqInitialize() {
+           // 新建交换机
+           RabbitAdmin admin = new RabbitAdmin(rabbitConnectionFactory);
+           Map<String, TopicExchange> map = new HashMap<String, TopicExchange>();
+           for (RabbitMQExchangeEnum exchanges : RabbitMQExchangeEnum.values()) {
+               String name = exchanges.getExchange();
+               TopicExchange exchange = new TopicExchange(name);
+               if (name.equals(Constant.DELAYED_EXCHANGE_NAME)) {
+                   //交换机为延迟交换机
+                   exchange.setDelayed(true);
+               }
+               admin.declareExchange(exchange);
+               map.put(name, exchange);
+           }
    
+           //交换机和 队列和 topic绑定
+           for (RabbitMQQueueEnum _queue : RabbitMQQueueEnum.values()) {
+               Queue queue = new Queue(_queue.getQueueName());
+               admin.declareQueue(queue);
+               TopicExchange exchange = map.get(_queue.getExchange());
+               String topic = _queue.getTopicName();
+               admin.declareBinding(BindingBuilder.bind(queue).to(exchange).with(topic));
+           }
+       }
+   }
+   ```
+
+   
+
+```java
+//订阅队列的消费者
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class FzjcDelayedMessageConsumerListener extends BaseMessageConsumerListener implements ChannelAwareMessageListener {
+    @Override
+    public void onMessage(Message message, Channel channel) throws Exception {
+        try {
+            byte[] body = message.getBody();
+            log.info(new String(body));
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+    }
+}
+```
+
+```java
+
+// 延迟队列指定  绑定对应的 消费者
+@Component
+public class FzjcDelayMessageSubscribe {
+	@Autowired
+	private CachingConnectionFactory rabbitConnectionFactory;
+	@Autowired
+	private FzjcDelayedMessageConsumerListener delayedMessageConsumerListener;
+	public void receiveMessage() {
+		SimpleMessageListenerContainer container =new SimpleMessageListenerContainer(rabbitConnectionFactory);
+	    MessageListenerAdapter adapter = new MessageListenerAdapter(delayedMessageConsumerListener);
+	    container.setMessageListener(adapter);
+	    container.setPrefetchCount(Constant.DEFAULT_PREFETCH_COUNT);
+	    container.setQueueNames(Constant.DELAYED_QUEUE_NAME);
+	    container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+	    container.setDefaultRequeueRejected(false);
+	    container.start();
+	}
+}
+```
+
+```java
+
+//初始化绑定
+@Component
+public class RabbitMQSubscribe {
+    @Autowired
+    private FzjcDelayMessageSubscribe delayMessageSubscribe;
+
+    /**
+     * 订阅所有RabbitMQ
+     */
+    public void subscribeAllRabbitMQ() {
+        delayMessageSubscribe.receiveMessage();
+    }
+}
+```
+
+```java
+
+
+//发送延迟消息 调用示例
+  	@SneakyThrows
+    @Override
+    public <T extends BaseMessageDTO> void sendMessage(T message, String topic, Integer delay) {
+        String serialized = new ObjectMapper().writeValueAsString(message);
+        Message messageBuilder = MessageBuilder
+                .withBody(serialized.getBytes(CHARSET_UTF8))
+                .setType(RabbitMQExchangeEnum.IntegralExchange.getExchange())
+                .setCorrelationId(UUID.randomUUID().toString())
+                .setDeliveryMode(MessageDeliveryMode.PERSISTENT)
+                .build();
+        this.rabbitTemplate.convertAndSend(Constant.DELAYED_EXCHANGE_NAME, topic, messageBuilder,a->{
+            a.getMessageProperties().setDelay(delay);
+        });
+    }
+```
+
