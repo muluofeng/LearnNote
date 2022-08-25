@@ -12,10 +12,13 @@
     
   RabbitMQ针对队列中的消息过期时间有两种方法可以设置。  
 
-    A:  通过队列属性设置，队列中所有消息都有相同的过期时间。
-    B:  对消息进行单独设置，每条消息TTL可以不同。
-    
-    如果同时使用，则消息的过期时间以两者之间TTL较小的那个数值为准。消息在队列的生存时间一旦超过设置的TTL值，就成为dead letter
+```md
+A:  通过队列属性设置，队列中所有消息都有相同的过期时间。
+
+B:  对消息进行单独设置，每条消息TTL可以不同。
+
+如果同时使用，则消息的过期时间以两者之间TTL较小的那个数值为准。消息在队列的生存时间一旦超过设置的TTL值，就成为dead letter
+```
 
 1. **Dead Letter Exchanges（DLX）**
 
@@ -31,7 +34,7 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
 
 
 
-### rabbitmq延迟队列安转
+### rabbitmq延迟队列安装
 
 1. 下载 rabbitmq-delayed-message-exchange 插件 ，下载对应的版本
 
@@ -58,7 +61,7 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
 
    重启后，前往 RabbitMQ web 控制台中，在创建交换机的选项中我们能发现多了一项类型：x-delayed-message
 
-   ![web 控制台](https://qiniu.muluofeng.com//uPic/202208/805f39dc9aa144b3a1029dc4a8997857~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0-20220825092425572.awebp)
+   ![image-20220825113706270](https://qiniu.muluofeng.com//uPic/202208/image-20220825113706270.png)
 
 ### springboot 实现延迟队列
 
