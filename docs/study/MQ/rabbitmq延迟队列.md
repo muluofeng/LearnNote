@@ -98,20 +98,7 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
        public static final String DELAYED_QUEUE_NAME = "delayed.queue";
        public static final String DELAYED_TPOCI_NAME = "delayed.topic";
    }
-   // 交换机枚举
-   public enum RabbitMQExchangeEnum {
-       /**
-        * 延迟交换机
-        */
-       DelayedExchange("yicall:wellred.Delayed");
-       private String exchange;
-       private RabbitMQExchangeEnum(String exchange) {
-           this.exchange = exchange;
-       }
-       public String getExchange() {
-           return this.exchange;
-       }
-   }
+   
    
    // 交换机、队列、topic 绑定
    @Component
@@ -206,11 +193,27 @@ x-dead-letter-routing-key：出现dead letter之后将dead letter重新按照指
                    .build();
            this.rabbitTemplate.convertAndSend(Constant.DELAYED_EXCHANGE_NAME, topic, messageBuilder,a->{
                a.getMessageProperties().setDelay(delay);
-               return a;
            });
        }
    
    
+   ```
+
+   ```java
+   // 交换机枚举
+   public enum RabbitMQExchangeEnum {
+       /**
+        * 延迟交换机
+        */
+       DelayedExchange(Constant.DELAYED_EXCHANGE_NAME);
+       private String exchange;
+       private RabbitMQExchangeEnum(String exchange) {
+           this.exchange = exchange;
+       }
+       public String getExchange() {
+           return this.exchange;
+       }
+   }
    ```
 
    
