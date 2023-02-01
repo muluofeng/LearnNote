@@ -193,7 +193,7 @@ static
 
 jdk动态代理类图如下
 
-![image-20200429101023902](images/image-20200429101023902.png)
+![image-20200429101023902](https://qiniu.muluofeng.com//uPic/202208/image-20200429101023902.png)
 
 ## CGLIB动态代理
 
