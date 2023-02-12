@@ -230,3 +230,6 @@ public class RabbitMQSubscribe {
     }
 ```
 
+
+
+
