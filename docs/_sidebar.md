@@ -1,4 +1,9 @@
 * 目录
+    * [**ES**]
+      * [ES1对多场景查询.md](/study/ES/ES1对多场景查询.md)
+      * [ES基础查询.md](/study/ES/ES基础查询.md)
+      * [ES基础概念.md](/study/ES/ES基础概念.md)
+      * [ES安装部署.md](/study/ES/ES安装部署.md)
     * [**JUC**]
       * [1_谈谈Volatile]
         * [1_Volatile和JMM内存模型的可见性](/study/JUC/1_谈谈Volatile/1_Volatile和JMM内存模型的可见性/README)
@@ -55,13 +60,19 @@
     * [**docker**]
       * [Docker图形化管理工具之Portainer.md](/study/docker/Docker图形化管理工具之Portainer.md)
       * [IDEA下利用docker打包springboot项目.md](/study/docker/IDEA下利用docker打包springboot项目.md)
+      * [dockerjava容器不能使用jstack等命令.md](/study/docker/dockerjava容器不能使用jstack等命令.md)
       * [docker-compose构建springboot应用.md](/study/docker/docker-compose构建springboot应用.md)
       * [docker基础.md](/study/docker/docker基础.md)
       * [docker安装gitlab.md](/study/docker/docker安装gitlab.md)
       * [docker安装mysql5.7和主从复制.md](/study/docker/docker安装mysql5.7和主从复制.md)
+      * [docker容器日志太大磁盘占满.md](/study/docker/docker容器日志太大磁盘占满.md)
       * [docker打包openjdk字体问题.md](/study/docker/docker打包openjdk字体问题.md)
       * [docker服务启动了端口无法访问的问题.md](/study/docker/docker服务启动了端口无法访问的问题.md)
       * [docker部署docker服务.md](/study/docker/docker部署docker服务.md)
+      * [img]
+        * [1666419715024.png](/study/docker/img/1666419715024.png)
+        * [1666419941576.png](/study/docker/img/1666419941576.png)
+        * [1666420196959.png](/study/docker/img/1666420196959.png)
       * [k8s]
         * [k8s使用.md](/study/docker/k8s/k8s使用.md)
         * [kubesphere安装.md](/study/docker/k8s/kubesphere安装.md)
