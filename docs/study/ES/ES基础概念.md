@@ -250,3 +250,22 @@ GET /my_index/_search
 
 
 
+### 集群的状态
+
+- green 所有的主节点和副本都是active,集群健康
+- yellow 至少有一个副本不可用，但是所有的主节点都是active ,数据任然保持完整性
+- red 至少一个主节点不可用 ，数据不完整 集群不可用
+
+### 健康值检查
+
+```
+GET _cat/health
+GET _cluster/health 
+```
+
+
+
+ES  会自动在node上做分片均衡，比如5个主分片 ，当前有6台服务器，当加入一台新的服务器的时候，会重新对分片进行分配
+
+![image-20230225154430101](https://qiniu.muluofeng.com//uPic/202302/image-20230225154430101.png)
+
