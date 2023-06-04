@@ -226,8 +226,162 @@ xpack.security.transport.ssl.enabled: true
 ./elasticsearch-setup-passwords interactive
 ```
 
-
 ## ES 集群部署
+
+单机搭建集群
+
+Docker-compose
+
+```yml
+version: '2.2'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.0
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /Users/muluofeng/soft/docker-compose/elk/es01/data:/usr/share/elasticsearch/data 
+      - /Users/muluofeng/soft/docker-compose/elk/es01/logs:/usr/share/elasticsearch/logs
+      - /Users/muluofeng/soft/docker-compose/elk/es01/plugins:/usr/share/elasticsearch/plugins
+      ## 添加证书后放开 注释
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elastic-certificates.p12:/usr/share/elasticsearch/config/elastic-certificates.p12
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.0
+    container_name: es02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /Users/muluofeng/soft/docker-compose/elk/es02/data:/usr/share/elasticsearch/data 
+      - /Users/muluofeng/soft/docker-compose/elk/es02/logs:/usr/share/elasticsearch/logs
+      - /Users/muluofeng/soft/docker-compose/elk/es02/plugins:/usr/share/elasticsearch/plugins
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elastic-certificates.p12:/usr/share/elasticsearch/config/elastic-certificates.p12
+    ports:
+      - 9201:9200
+    networks:
+      - elastic
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.0
+    container_name: es03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /Users/muluofeng/soft/docker-compose/elk/es03/data:/usr/share/elasticsearch/data 
+      - /Users/muluofeng/soft/docker-compose/elk/es03/logs:/usr/share/elasticsearch/logs
+      - /Users/muluofeng/soft/docker-compose/elk/es03/plugins:/usr/share/elasticsearch/plugins
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elastic-certificates.p12:/usr/share/elasticsearch/config/elastic-certificates.p12
+    ports:
+      - 9202:9200
+    networks:
+      - elastic
+
+  kib01:
+    image: docker.elastic.co/kibana/kibana:7.16.0
+    container_name: kib01
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://es01:9200
+      ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200","http://es03:9200"]'
+      i18n.locale: zh-CN
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    networks:
+      - elastic
+  # cerebro:
+  #   image: lmenezes/cerebro:latest
+  #   container_name: cerebro
+  #   ports:
+  #     - "9000:9000"
+  #   command:
+  #     - -Dhosts.0.host=http://es01:9200
+  #     - -Dhosts.1.host=http://es02:9200
+  #     - -Dhosts.2.host=http://es03:9200
+  #   networks:
+  #     - elastic
+
+networks:
+  elastic:
+    driver: bridge
+```
+
+kibana.yml
+
+
+
+```yml
+server.name: kibana
+server.host: "0"
+elasticsearch.username: elastic
+elasticsearch.password: "123456"
+```
+
+
+
+elasticsearch.yml
+
+```yml
+# cluster.name: es-docker-cluster
+network.host: 0.0.0.0
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.keystore.type: PKCS12
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.type: PKCS12
+
+xpack.security.audit.enabled: true
+xpack.monitoring.collection.enabled: true
+```
+
+
+
+
+
+es 添加账号密码，先启动任意一个es 然后进入到容器中，生成elastic-certificates.p12文件。然后copy到当前项目中做映射
+
+，然后docker-compose up 启动，进入到es01,添加es账号密码，./elasticsearch-setup-passwords interactive
+
+
+
+
 
 
 
