@@ -17,7 +17,7 @@
 ##  ConcurrentHashMap  的底层结构
 1.7 的数据结构 
 
-![xxx](./images/e7bHFK.jpeg)
+![xxx](https://qiniu.muluofeng.com//uPic/202208/e7bHFK.jpeg)
 
 ​		如图所示，是由 Segment 数组、HashEntry 组成，和 HashMap 一样，仍然是**数组加链表**。
 

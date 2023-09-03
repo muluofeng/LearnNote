@@ -355,7 +355,7 @@ queue：消息队列，图中红色部分。类似一个邮箱，可以缓存消
   Connection connection = connectionFactory.newConnection();
   //创建通道
   Channel channel = connection.createChannel();
-  //参数1: 是否持久化  参数2:是否独占队列 参数3:是否自动删除  参数4:其他属性
+  //参数1:队列名称  参数2:是否持久化  参数3:是否独占队列 参数4:是否自动删除  参数5:其他属性
   channel.queueDeclare("hello",true,false,false,null);
   channel.basicPublish("","hello", null,"hello rabbitmq".getBytes());
   channel.close();
@@ -375,6 +375,7 @@ queue：消息队列，图中红色部分。类似一个邮箱，可以缓存消
   Connection connection = connectionFactory.newConnection();
   Channel channel = connection.createChannel();
   channel.queueDeclare("hello", true, false, false, null);
+  //参数1 队列名称 参数2 是否自动提交
   channel.basicConsume("hello",true,new DefaultConsumer(channel){
     @Override
     public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
@@ -549,7 +550,7 @@ channel.basicConsume(queue,true,new DefaultConsumer(channel){
 
 #### **4.5.4 开发消费者-3**
 
-```
+```java
 //绑定交换机
 channel.exchangeDeclare("logs","fanout");
 //创建临时队列
