@@ -97,6 +97,7 @@ kubectl create deployment mytomcat --image=tomcat:8.5.68  --replicas=3
 # 自愈能力  对于使用  run 创建的pod ，pod被删除的时候不会重新生成一个pod
 # deployment 创建的pod 被删除的时候 会自动创建对应的pod 顶上来 ，还能使用--replicas 指定多个副本 
 
+ kubectl delete  pod  podName
 ```
 
 使用yaml创建deployment
