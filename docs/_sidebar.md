@@ -75,19 +75,21 @@
       * [docker容器日志太大磁盘占满.md](/study/docker/docker容器日志太大磁盘占满.md)
       * [docker打包openjdk字体问题.md](/study/docker/docker打包openjdk字体问题.md)
       * [docker服务启动了端口无法访问的问题.md](/study/docker/docker服务启动了端口无法访问的问题.md)
+      * [docker网络模式.md](/study/docker/docker网络模式.md)
       * [docker部署docker服务.md](/study/docker/docker部署docker服务.md)
       * [img]
         * [1666419715024.png](/study/docker/img/1666419715024.png)
         * [1666419941576.png](/study/docker/img/1666419941576.png)
         * [1666420196959.png](/study/docker/img/1666420196959.png)
       * [k8s]
+        * [k8snode节点不能执行kubectl命令.md](/study/docker/k8s/k8snode节点不能执行kubectl命令.md)
         * [k8s使用.md](/study/docker/k8s/k8s使用.md)
+        * [k8s部署nginx入门.md](/study/docker/k8s/k8s部署nginx入门.md)
         * [kubesphere安装.md](/study/docker/k8s/kubesphere安装.md)
         * [kubesphere的devops使用.md](/study/docker/k8s/kubesphere的devops使用.md)
         * [kubesphere路由使用https代理.md](/study/docker/k8s/kubesphere路由使用https代理.md)
         * [linux下k8s集群安装.md](/study/docker/k8s/linux下k8s集群安装.md)
       * [kong网关docker搭建.md](/study/docker/kong网关docker搭建.md)
-    * [**go**]
     * [**java基础**]
       * [1_equals和等等的区别](/study/java基础/1_equals和等等的区别/README)
       * [2_代码块](/study/java基础/2_代码块/README)
@@ -115,11 +117,6 @@
         * [gitmerge和gitrebase.md](/study/linux/git/gitmerge和gitrebase.md)
         * [git入门.md](/study/linux/git/git入门.md)
         * [git版本回退.md](/study/linux/git/git版本回退.md)
-        * [img]
-          * [1646809081705.png](/study/linux/git/img/1646809081705.png)
-          * [1646809095810.png](/study/linux/git/img/1646809095810.png)
-          * [1646809313170.png](/study/linux/git/img/1646809313170.png)
-          * [1646809344969.png](/study/linux/git/img/1646809344969.png)
       * [grep的使用.md](/study/linux/grep的使用.md)
       * [idea远程调试.md](/study/linux/idea远程调试.md)
       * [java前后端发布脚本.md](/study/linux/java前后端发布脚本.md)
@@ -136,12 +133,15 @@
       * [shadowsocks安装和使用.md](/study/linux/shadowsocks安装和使用.md)
       * [部署安装elasticsearch.md](/study/linux/部署安装elasticsearch.md)
     * [**mysql**]
-      * [mysql主从复制](/study/mysql/mysql主从复制/README)
-      * [事务隔离级别](/study/mysql/事务隔离级别/README)
+      * [mysql主从复制]
+        * [readme.md](/study/mysql/mysql主从复制/readme.md)
+      * [事务隔离级别]
+        * [readme.md](/study/mysql/事务隔离级别/readme.md)
       * [其他]
         * [MySQL大字段索引.md](/study/mysql/其他/MySQL大字段索引.md)
         * [case-when使用.md](/study/mysql/其他/case-when使用.md)
         * [mysqldump导出sql.md](/study/mysql/其他/mysqldump导出sql.md)
+        * [mysql时间精度问题.md](/study/mysql/其他/mysql时间精度问题.md)
         * [tinyint(1)和tinyint(4)的区别.md](/study/mysql/其他/tinyint(1)和tinyint(4)的区别.md)
         * [@变量的使用.md](/study/mysql/其他/@变量的使用.md)
       * [索引]
@@ -150,9 +150,13 @@
           * [img]
             * [1679550050559.png](/study/mysql/索引/2_索引分类和索引优化/img/1679550050559.png)
             * [1679550104921.png](/study/mysql/索引/2_索引分类和索引优化/img/1679550104921.png)
-        * [3_索引的创建时机](/study/mysql/索引/3_索引的创建时机/README)
-        * [4_慢查询日志和showprofiles](/study/mysql/索引/4_慢查询日志和showprofiles/README)
-      * [锁](/study/mysql/锁/README)
+          * [readme.md](/study/mysql/索引/2_索引分类和索引优化/readme.md)
+        * [3_索引的创建时机]
+          * [readme.md](/study/mysql/索引/3_索引的创建时机/readme.md)
+        * [4_慢查询日志和showprofiles]
+          * [readme.md](/study/mysql/索引/4_慢查询日志和showprofiles/readme.md)
+      * [锁]
+        * [readme.md](/study/mysql/锁/readme.md)
     * [**netty**]
       * [BIO、NIO、AIO.md](/study/netty/BIO、NIO、AIO.md)
       * [尚硅谷netty]
@@ -171,16 +175,19 @@
           * [chapter_blank.md](/study/netty/尚硅谷netty/_content/chapter_blank.md)
     * [**redis**]
       * [redis主从复制.md](/study/redis/redis主从复制.md)
-      * [redis事务和订阅](/study/redis/redis事务和订阅/README)
-      * [redis安装和介绍](/study/redis/redis安装和介绍/README)
-      * [redis持久化](/study/redis/redis持久化/README)
+      * [redis事务和订阅]
+        * [readme.md](/study/redis/redis事务和订阅/readme.md)
+      * [redis安装和介绍]
+        * [readme.md](/study/redis/redis安装和介绍/readme.md)
+      * [redis持久化]
+        * [readme.md](/study/redis/redis持久化/readme.md)
       * [redis搭建哨兵模式.md](/study/redis/redis搭建哨兵模式.md)
-      * [redis的基础数据类型](/study/redis/redis的基础数据类型/README)
+      * [redis的基础数据类型]
+        * [readme.md](/study/redis/redis的基础数据类型/readme.md)
     * [**分布式**]
       * [3_分布式锁](/study/分布式/3_分布式锁/README)
-    * [**前端**]
-      * [css]
-      * [vue]
+    * [**机器学习**]
+      * [神经网络基础.md](/study/机器学习/神经网络基础.md)
     * [**测试**]
       * [selenium使用.md](/study/测试/selenium使用.md)
     * [**计算机网络**]

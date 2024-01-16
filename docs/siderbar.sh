@@ -75,9 +75,10 @@ function printDir(){
         fi
      done
 }
-
-root="/Users/muluofeng/Documents/muluofeng.github.io/docs/study"
-targetMd="/Users/muluofeng/Documents/muluofeng.github.io/docs/_sidebar.md"
+current=$(pwd)
+echo $current
+root=$current"/study"
+targetMd=$current"/_sidebar.md"
 
 exclude=(Code _media _sidebar.md _coverpage.md _navbar.md guide.md index.html 尚硅谷redis.mmap 黑马程序员-Redis学习笔记.doc)
 
@@ -100,7 +101,7 @@ do
 done    
 
 # readme 修改
-targetREADMEMd="/Users/muluofeng/Documents/muluofeng.github.io/docs/README.md"
+targetREADMEMd=$current"/README.md"
 cat /dev/null>$targetREADMEMd
 echo "# 学习笔记">>$targetREADMEMd
 echo "* 首页">>$targetREADMEMd
