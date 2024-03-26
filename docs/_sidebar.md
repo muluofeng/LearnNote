@@ -76,7 +76,7 @@
       * [docker打包openjdk字体问题.md](/study/docker/docker打包openjdk字体问题.md)
       * [docker服务启动了端口无法访问的问题.md](/study/docker/docker服务启动了端口无法访问的问题.md)
       * [docker网络模式.md](/study/docker/docker网络模式.md)
-      * [docker部署docker服务.md](/study/docker/docker部署docker服务.md)
+      * [docker部署dubbo服务.md](/study/docker/docker部署dubbo服务.md)
       * [img]
         * [1666419715024.png](/study/docker/img/1666419715024.png)
         * [1666419941576.png](/study/docker/img/1666419941576.png)
@@ -90,6 +90,12 @@
         * [kubesphere路由使用https代理.md](/study/docker/k8s/kubesphere路由使用https代理.md)
         * [linux下k8s集群安装.md](/study/docker/k8s/linux下k8s集群安装.md)
       * [kong网关docker搭建.md](/study/docker/kong网关docker搭建.md)
+      * [中间件]
+        * [docker-compose部署es和kibana.md](/study/docker/中间件/docker-compose部署es和kibana.md)
+        * [docker-compose部署mysql8.md](/study/docker/中间件/docker-compose部署mysql8.md)
+        * [docker-compose部署redis.md](/study/docker/中间件/docker-compose部署redis.md)
+        * [images]
+          * [image.png](/study/docker/中间件/images/image.png)
     * [**java基础**]
       * [1_equals和等等的区别](/study/java基础/1_equals和等等的区别/README)
       * [2_代码块](/study/java基础/2_代码块/README)

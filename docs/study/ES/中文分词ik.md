@@ -2,6 +2,8 @@
 
 https://github.com/medcl/elasticsearch-analysis-ik
 
+参考： https://www.cnblogs.com/995i996/p/18051662
+
 ik中文分词热更新
 
 下载 ik 分词的源码修改
@@ -280,12 +282,17 @@ java.security.AccessControlException: access denied (permission java.lang.Runtim
 grant {
   ....
   permission java.lang.RuntimePermission "setContextClassLoader";
-  permission java.net.SocketPermission "mysqlIP:3306","connect,resolve"; 
+  permission java.net.SocketPermission "*","connect,resolve"; 
   permission java.security.SecurityPermission "putProviderProperty.MySQLScramSha1Sasl";
   permission java.security.SecurityPermission "insertProvider.MySQLScramSha1Sasl";
 }
 ```
 
+错误 ： failed to load plugin analysis-ik due to jar hell
+
+将ik分词器包下面其余的jar包删除，只保留以下的jar包
+
+![1711445992134.png](https://qiniu.muluofeng.com/1711445992134.png)
 
 
 重启es
