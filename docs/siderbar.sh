@@ -103,7 +103,7 @@ done
 # readme 修改
 targetREADMEMd=$current"/README.md"
 cat /dev/null>$targetREADMEMd
-echo "# 学习笔记">>$targetREADMEMd
+echo "# 文档">>$targetREADMEMd
 echo "* 首页">>$targetREADMEMd
 
 for file in $(ls ./ | sort -V )

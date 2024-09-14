@@ -108,7 +108,7 @@ B+树 和 hash   Innodb一般使用B+树
 #### 3. key_len 
 表示索引中使用的字节数，可通过该列计算查询中使用的索引的长度。 key_len 字段能够帮你检查是否充分的 利用上了索引。 ken_len 越长，说明索引使用的越充分
 
-![](./images/BRyxzG-sNa6fI.png)
+![](images/BRyxzG-sNa6fI.png)
 
 #### 4. ref 
 
@@ -261,7 +261,7 @@ EXPLAIN SELECT * FROM class LEFT JOIN book ON class.card = book.card;
 
 - left join时，尽量让实体表作为被驱动表。
 
-    ![image-20210727094431363](./images/image-20210727094431363.png)
+    ![image-20210727094431363](images/image-20210727094431363.png)
 
 
 

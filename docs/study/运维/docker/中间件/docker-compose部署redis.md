@@ -2,7 +2,7 @@
 
 #### 目录结构
 
-![目录结构](./images/image.png)
+![目录结构](images/image.png)
 
 
 ###  docker-compose 部署redis 
